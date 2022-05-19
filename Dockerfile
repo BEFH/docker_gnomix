@@ -18,5 +18,5 @@ RUN wget https://github.com/AI-sandbox/gnomix/archive/refs/heads/main.zip && \
     mv gnomix-main/* /gnomix/ && \
     rm -rf main.zip /gnomix/demo
 # below is necessary for the env to work with shell sessions
-ENV PATH "$MAMBA_ROOT_PREFIX/bin:$PATH"
+ENV PATH "$MAMBA_ROOT_PREFIX/bin:/gnomix:$PATH"
 ENTRYPOINT ["/usr/local/bin/_entrypoint.sh", "python3", "/gnomix/gnomix.py"]
